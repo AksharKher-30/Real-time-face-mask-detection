@@ -1,0 +1,26 @@
+<annotation>
+	<folder>face_mask_dataset</folder>
+	<filename>9f3e8a08-4850-11f0-b08d-b63e616af7a8.jpg</filename>
+	<path>/Users/akshar/Documents/DL/CNN/RealTimeObjectDetection/Tensorflow/workspace/images/face_mask_dataset/9f3e8a08-4850-11f0-b08d-b63e616af7a8.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Mask</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>815</xmin>
+			<ymin>434</ymin>
+			<xmax>1079</xmax>
+			<ymax>698</ymax>
+		</bndbox>
+	</object>
+</annotation>
