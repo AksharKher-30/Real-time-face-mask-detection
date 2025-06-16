@@ -26,8 +26,8 @@ face-mask-detection/
 ├── notebook/
 │   └── your_notebook.ipynb      # Training and experimentation notebook
 ├── runs/                        # YOLOv8 training output (weights, logs, plots)
-│   ├── detect/                  
-│   ├── train/                   
+│   ├── detect/                  #runs/train/face_mask_detector contain logs for YOLOv8n
+│   ├── train/                   #runs/s_runs/s_train/face_mask_detector_s contaons logs for YOLOv8s
 │   └── ...
 ├── yolov8n.pt                   # YOLOv8n pre-trained model (used initially)
 ├── yolov8s.pt                   # YOLOv8s pre-trained model (improved results)
@@ -53,7 +53,7 @@ cd face-mask-detection
 ```bash
 pip install -r requirements.txt
 ```
-Make sure you have Python 3.8+ and pip installed on your system.
+> Make sure you have Python 3.8+ and pip installed on your system.
 
 --- 
 
@@ -80,10 +80,54 @@ data/
 │   ├── images/
 │   └── labesl/
 ```
-Update dataset.yaml accordingly with the correct paths and class names:
+> Update dataset.yaml accordingly with the correct paths and class names:
 ```bash
 train: data/images/train
 val: data/images/test
 nc: 2
 names: ['Mask', 'No Mask']
 ```
+The trained weights will be saved under:
+```bash
+runs/s_runs/s_train/face_mask_detector_s/weights/
+├── best.pt
+└── last.pt
+```
+> **best.pt** is used for inference.
+
+---
+## 🎥 Real-Time Detection
+To run live webcam detection using the trained model:
+```bash
+python realtime_mask_detection.py
+```
+> Make sure to set the correct path to your trained model weights, e.g. **best.pt**, inside the script.
+
+---
+
+## TensorBoard Logging (Optional)
+To visualize training metrics with TensorBoard:
+```bash
+tensorboard --logdir runs/
+```
+Then open http://localhost:6006 in your browser.
+
+--- 
+
+## 📊 Performance
+
+### 📉 Live Face Mask Detection Accuracy
+
+| Model    | Mask Accuracy | No Mask Accuracy |
+|----------|----------------|------------------|
+| YOLOv8n  | 66.2%          | 49.5%            |
+| YOLOv8s  | 84.5%          | 81.9%            |
+
+> ✅ **YOLOv8s clearly outperformed YOLOv8n in real-time detection.**
+
+---
+
+## 📊 Results Example
+
+### Here is a snapshot of the real-time detection in action:
+![Real-time Face Mask Detection](assets/mask.jpg)
