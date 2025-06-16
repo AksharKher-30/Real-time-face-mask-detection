@@ -130,4 +130,8 @@ Then open http://localhost:6006 in your browser.
 ## 📊 Results Example
 
 ### Here is a snapshot of the real-time detection in action:
-![Real-time Face Mask Detection](assets/mask.jpg)
+> This is for **YOLOv8s** pre-trained model
+<p align="center">
+  <img src="assets/mask.png" alt="with mask" width="45%" />
+  <img src="assets/no mask.png" alt="without mask" width="45%" />
+</p>
