@@ -45,7 +45,7 @@ face-mask-detection/
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/your-username/face-mask-detection.git
+git clone https://github.com/AksharKher-30/Real-time-face-mask-detection.git
 cd face-mask-detection
 ```
 
